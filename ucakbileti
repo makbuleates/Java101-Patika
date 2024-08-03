@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class ucakbileti {
+    public static void main (String[] args){
+        Scanner input= new Scanner(System.in);
+        int yas, yolculuktipi;
+        double mesafe,ucret=0.10, tutar, indtutar, sontutar, toplamtutar;
+
+        System.out.print("Gideceğiniz mesafeyi km cinsinden giriniz:");
+        mesafe= input.nextDouble();
+        System.out.print("Yaşınızı giriniz:");
+        yas= input.nextInt();
+
+        if((mesafe<0)||(yas<0))
+            System.out.print("Hatalı Veri Girdiniz!");
+
+        else {
+            tutar = mesafe * 0.10;
+            if (yas < 12) {
+                indtutar = (tutar-(tutar * 0.50));
+            } else if ((yas > 12) && (yas < 24)) {
+                indtutar = (tutar -(tutar * 0.10));
+            } else if(yas>65){
+                indtutar = (tutar- (tutar * 0.30));
+            }
+            else{
+                indtutar=tutar;
+            }
+
+
+            System.out.print("Yolculuk tipinizi giriniz 1-)Tek Yön 2-)Gidiş Dönüş:");
+            yolculuktipi = input.nextInt();
+            if ((yolculuktipi < 1) && (yolculuktipi > 2))
+                System.out.print("Hatalı Veri Girdiniz!");
+            else {
+
+                if (yolculuktipi == 2) {
+                    sontutar = (indtutar * 0.20);
+                    toplamtutar = (indtutar - sontutar) * 2;
+                }
+                else {
+                    toplamtutar = indtutar;
+                }
+
+                System.out.print("Ödemeniz gereken tutar:" + toplamtutar);
+
+
+            }
+        }
+
+    }
+}
