@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        int i,sonuc = 1;
+        Scanner inp= new Scanner(System.in);
+        System.out.print("Bir sayı giriniz:");
+        int taban= inp.nextInt();
+        System.out.print("Sayının kuvvetini giriniz:");
+        int us= inp.nextInt();
+        for(i=1; i<=us; i++){
+            sonuc*=taban;
+        }
+        System.out.println(sonuc);
+        }
+    }
