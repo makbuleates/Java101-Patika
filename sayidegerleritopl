@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner input= new Scanner(System.in);
+        System.out.print("Sayı giriniz:");
+        int sayi= input.nextInt(), toplam=0;
+
+        while (sayi!=0){
+            toplam+=sayi%10;
+            sayi=(sayi/10);
+        }
+
+        System.out.println("Girdiğiniz sayının rakamları oplamı:" + toplam);
+    }
+}
