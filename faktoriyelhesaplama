@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner input= new Scanner(System.in);
+        System.out.print("Bir sayı giriniz:");
+        int fakt=1,i, sayi= input.nextInt();
+
+        for(i=1; i<=sayi; i++){
+            fakt*=i;
+        }
+        System.out.println(sayi + " faktöriyel: " + fakt);
+    }
+}
