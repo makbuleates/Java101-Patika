@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        int faktn=1,faktr=1, faktt=1,i,komb,n,r,t;
+        Scanner input= new Scanner(System.in);
+        System.out.print("n giriniz:");
+        n = input.nextInt();
+        for(i=1; i<=n; i++){
+            faktn*=i;
+        }
+
+        System.out.print("r giriniz:");
+        r = input.nextInt();
+        for(i=1; i<=r; i++){
+            faktr*=i;
+        }
+
+        for(i=1; i<=(n-r); i++){
+            faktt*=i;
+        }
+      komb=( (faktn)/(faktr*faktt) );
+        System.out.print("Kombinasyon:" + komb);
+    }
+}
