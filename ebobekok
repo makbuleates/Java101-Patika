@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner input= new Scanner(System.in);
+        int say1,say2,ebob=1, ekok,kucuk,i=1;
+
+        System.out.print("Birinci sayıyı giriniz:");
+        say1=input.nextInt();
+        System.out.print("İkinci sayıyı giriniz:");
+        say2=input.nextInt();
+        if(say1<say2)
+            kucuk=say1;
+        else
+            kucuk=say2;
+
+       /* for(int i=1; i<=kucuk; i++){
+            if((say1%i == 0)&& (say2%i == 0)){
+                ebob=i;
+            }
+        }*/
+
+        while (i<=kucuk){
+            if((say1%i == 0)&& (say2%i == 0)){
+                ebob=i;
+            }
+            i++;
+        }
+
+        ekok= ((say1*say2)/ebob);
+
+        System.out.println("EBOB:"+ ebob);
+        System.out.print("EKOK:"+ ekok);
+
+    }
+}
