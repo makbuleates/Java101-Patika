@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class minmax {
+    public static void main(String[] args){
+        Scanner input= new Scanner(System.in);
+        System.out.println("Kaç tane sayı gireceksiniz?");
+        int sayiadedi= input.nextInt();
+
+            System.out.println(sayiadedi + " tane sayı girin:");
+
+            int min= Integer.MAX_VALUE;
+            int max=Integer.MIN_VALUE;
+
+            for(int i=0; i<sayiadedi; i++){
+                int sayi= input.nextInt();
+                if(sayi<min)
+                    min=sayi;
+                if(sayi>max)
+                    max=sayi;
+            }
+        System.out.println("En küçük sayı: " + min);
+        System.out.print("En büyük sayı: " + max);
+
+    }
+}
