@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner input= new Scanner(System.in);
+        int bakiye=1500,hak=3,secim, para, paracek;
+        String kullaniciadi, parola;
+
+        while(hak>0) {
+            System.out.print("Kullanıcı adınızı giriniz:");
+            kullaniciadi = input.nextLine();
+            System.out.print("Parolanızı giriniz:");
+            parola = input.nextLine();
+
+            if (kullaniciadi.equals("patika") && parola.equals("java13")) {
+                System.out.print("Merhaba! Bankamıza hoşgeldiniz!");
+                do {
+                    System.out.println("Lütfen yapmak istediğiniz işlemi giriniz:");
+                    System.out.println("1- Para yatırma");
+                    System.out.println("2- Para çekme");
+                    System.out.println("3- Bakiye sorgula");
+                    System.out.println("4- Çkış yap");
+                    secim= input.nextInt();
+
+                    switch (secim){
+                        case 1:
+                            System.out.print("Yatırmak istediğiniz miktarı girin:");
+                            para= input.nextInt();
+                            bakiye+=para;
+                            break;
+
+                        case 2:
+                            System.out.print("Çekmek istediğiniz para miktarını girin:");
+                            paracek=input.nextInt();
+
+                            if(paracek>bakiye)
+                                System.out.println("Yetersiz bakiye.");
+                            else{
+                                bakiye-= paracek;}
+                            break;
+
+                        case 3:
+                            System.out.println("Bakiyeniz:"+ bakiye);
+                            break;
+
+                    }
+                }while (secim!=4);
+                System.out.print("Bizi tercih ettiğiniz için teşekkürler! Görüşek üzere!");
+                break;
+
+            } else {
+                System.out.print("Kullanıcı adı veya parola yanlış. Lütfen tekrar deneyin.\n");
+                System.out.print("Kalan deneme hakkınız:" + --hak +"\n");
+              if(hak==0){
+                  System.out.println("Hesabınız bloke olmuştur. Lütfen bankamızla iletişime geçiniz.");
+                }
+            }
+        }
+
+    }
+}
