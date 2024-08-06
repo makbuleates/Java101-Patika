@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class fibonacciserisi {
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Eleman sayısını giriniz:");
+        int numb = inp.nextInt(), ilksayi=0,ikincisayi=1;
+        System.out.print(ilksayi + " " + ikincisayi + " ");
+        for (int i = 0; i <= numb; i++) {
+            int temp= ikincisayi;
+            ikincisayi+= ilksayi;
+            ilksayi=temp;
+            System.out.print(ikincisayi + " ");
+        }
+    }
+    }
