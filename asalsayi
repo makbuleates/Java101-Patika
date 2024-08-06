@@ -1,0 +1,15 @@
+public class asalsayilar {
+    public static void main(String[] args) {
+      for(int i=2; i<100; i++){
+          boolean kontrol= true;
+      for(int j=2; j<=i; j++){
+          if((i%j==0)&&(i!=j)){
+              kontrol= false;
+              break;
+          }
+          }
+          if(kontrol)
+              System.out.print(i +" ");
+      }
+    }
+}
