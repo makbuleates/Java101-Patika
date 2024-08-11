@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    int result;
+    static int ussunual(int taban, int kuvvet){
+        if (kuvvet==0){
+            return 1;
+            }
+
+        return taban*(ussunual(taban,kuvvet-1));
+    }
+
+    public static void main(String[] args){
+        Scanner input= new Scanner(System.in);
+        System.out.print("Sayıyı giriniz:");
+        int sayi= input.nextInt();
+
+        System.out.print("Kuvvetini giriniz:");
+        int us= input.nextInt();
+
+        int sonuc=ussunual(sayi,us);
+        System.out.print("Sonuç:" + sonuc);
+    }
+}
