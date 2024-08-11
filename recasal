@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static boolean asalmi(int sayi){
+        boolean kontrol=true;
+        int i=2;
+        if(sayi%i==0)
+            kontrol=false;
+        else
+            asalmi(sayi-1);
+        return kontrol;
+        
+    }
+    
+    public static void main(String[] args) {
+        Scanner input= new Scanner(System.in);
+        System.out.print("Sayıyı giriniz:");
+        int number= input.nextInt();
+        boolean cevap=asalmi(number);
+
+        if (cevap==true)
+            System.out.println("Girdiğiniz sayı asaldır");
+        else
+            System.out.println("Girdiğiniz sayı asal değildir.");
+    }
+    }
