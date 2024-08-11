@@ -1,0 +1,144 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static int topla (){
+        Scanner inp= new Scanner(System.in);
+        System.out.print("Toplamak istediğiniz sayıları giriniz:");
+        int sayi=1, sonuc=0;
+        while(sayi!=0){
+            sayi= inp.nextInt();
+            sonuc+=sayi;
+        }
+        return sonuc;
+    }
+
+    static int cikar (){
+        Scanner inp= new Scanner(System.in);
+        System.out.print("Çıkarmak istediğiniz sayıları giriniz:");
+        int sayi=1, sonuc=0, sayac=0;
+        while(sayi!=0){
+            sayi= inp.nextInt();
+            if(sayac==0){
+            sonuc=sayi;
+            sayac=1;}
+
+            else{
+                sonuc-=sayi; }
+            }
+
+        return sonuc;
+    }
+
+    static int carp(){
+        Scanner inp= new Scanner(System.in);
+        System.out.print("Çarpmak istediğiniz sayıları giriniz:");
+        int sayi=1, sonuc=1;
+        while(sayi!=0){
+            sayi= inp.nextInt();
+            if(sayi==0)
+                break;
+            sonuc*=sayi;
+        }
+        return sonuc;
+    }
+
+    static double bol(){
+        Scanner inp= new Scanner(System.in);
+        System.out.print("Bölmek istediğiniz sayıları giriniz:");
+        double sayi1= inp.nextDouble(), sayi2= inp.nextDouble();
+
+        if(sayi2==0){
+            System.out.println("Bölen sıfırdan farklı olmalıdır.");
+        return 1;}
+        return (sayi1/sayi2);
+    }
+
+        static int ussunual(){
+            Scanner inp= new Scanner(System.in);
+            System.out.print("Sayıyı giriniz:");
+            int taban= inp.nextInt();
+            System.out.print("Kuvvetini giriniz:");
+            int us= inp.nextInt(), sonuc=1;
+
+            for(int i=1; i<=us; i++){
+                sonuc*=taban;
+            }
+        return sonuc;
+        }
+
+        static int fakt(){
+            Scanner inp= new Scanner(System.in);
+            System.out.print("Faktöriyelini hesaplamak istediğiniz sayıyı giriniz:");
+            int sayi= inp.nextInt(), sonuc=1;
+            for(int i=1; i<=sayi; i++){
+                sonuc*=i;
+            }
+
+            return sonuc;
+        }
+
+        static int mod(){
+            Scanner inp= new Scanner(System.in);
+            System.out.print("Bölünen giriniz:");
+            int bolunen= inp.nextInt();
+            System.out.print("Böleni giriniz:");
+            int bolen= inp.nextInt();
+
+        return (bolunen%bolen);
+        }
+
+        static void cevrealan(){
+            Scanner inp= new Scanner(System.in);
+            System.out.print("Dikdörtgenin kenar uzunuklarını giriniz:");
+            int kenar1= inp.nextInt(), kenar2= inp.nextInt();
+            System.out.println("Çevre:" + (kenar1+kenar2)*2 + "\n" + "Alan:" + (kenar1*kenar2));        }
+
+    public static void main(String[] args){
+        Scanner inp= new Scanner(System.in);
+        System.out.println(" 0-Çıkış Yap \n 1-Toplama \n 2-Çıkarma \n 3-Çarpma \n 4-Bölme");
+        System.out.println(" 5-Üslü Sayı Hesaplama \n 6-Faktöriyel \n 7-Mod Alma \n 8-Dikdörtgen Alan ve Çevre Hesaplama ");
+        System.out.print("Yapmak istediğiniz işlemi giriniz:");
+        int selection = inp.nextInt();
+
+        switch (selection){
+            case 1:
+                System.out.println("Sonuç:" + topla());
+                break;
+
+            case 2:
+                System.out.println("Sonuç:" + cikar());
+                break;
+
+            case 3:
+                System.out.println("Sonuç:" + carp());
+                break;
+
+            case 4:
+                System.out.println("Sonuç:" + bol());
+                break;
+
+            case 5:
+                System.out.println("Sonuç:" + ussunual());
+                break;
+
+            case 6:
+                System.out.println("Sonuç:" + fakt());
+                break;
+
+            case 7:
+                System.out.println("Sonuç:" + mod());
+                break;
+
+            case 8:
+                cevrealan();
+                break;
+
+            case 0:
+                break;
+
+
+        }
+
+    }
+}
