@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static int desen( int sayi){
+    if (sayi>0){
+        System.out.print(sayi + " ");
+        return desen(sayi-5);}
+    return sayi;
+    }
+
+    static void desen2(int sayi, int number){
+        if(sayi<=number){
+            System.out.print(sayi + " ");
+            desen2(sayi+5, number);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner inp= new Scanner(System.in);
+        System.out.print("Bir sayı giriniz:");
+        int sayi= inp.nextInt(), number=sayi;
+
+        sayi=desen(sayi);
+        desen2(sayi,number);
+    }
+    }
