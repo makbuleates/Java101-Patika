@@ -1,0 +1,12 @@
+public class Main {
+    public static void main(String[] args) {
+    int[] array = {4, 7, 23, 46, 19 ,58};
+    double harm=0;
+
+    for (int i=0; i< array.length; i++){
+        harm+=(1.0/array[i]);
+    }
+    double harmavrg= (6.0/harm);
+        System.out.println("Ortalama:" + harmavrg);
+    }
+}
