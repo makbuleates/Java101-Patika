@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class guessNumber {
+    public static void main(String[] args){
+        int  number = (int) (Math.random()*100);
+        int selected, right=0;
+        Scanner input = new Scanner(System.in);
+        
+        while(right<5){
+            System.out.println("Sayı tahmininizi giriniz:");
+            selected= input.nextInt();
+
+            if(selected<0 || selected>99){
+                System.out.println("Lütfen 0-100 arasında bir sayı giriniz.");
+                continue;
+            }
+
+            if(selected==number){
+                System.out.println("Tebrikler! Gizli sayıyı doğru tahmin ettiniz!");
+                break;
+            }
+
+            else {
+                System.out.println("Tahmininiz doğru değil!");
+                right++;
+                if (selected < number) {
+                    System.out.println(selected + " sayısı gizli sayıdan küçüktür!");
+                }
+                else {
+                    System.out.println(selected + " sayısı gizli sayıdan büyüktür!");
+                }
+
+                System.out.println("Kalan tahmin hakkınız:" + (5-right));
+            }
+
+            if (right == 5) {
+                System.out.println("Tahmin hakkınız bitti. Gizli sayı: " + number);
+            }
+        }
+
+    }
+}
