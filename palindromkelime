@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner input= new Scanner(System.in);
+        System.out.print("Kelime giriniz:");
+        String word= input.next();
+        int i=0;
+        int j= word.length()-1;
+        boolean isPalindrome = true;
+
+        while(i<j){
+            if(word.charAt(i)!=word.charAt(j)){
+                isPalindrome = false;
+                break;}
+
+            else{
+                    i++;
+                    j--;
+            }
+        }
+
+        if(isPalindrome){
+            System.out.println(word + " palindrom bir kelimedir.");}
+        else{
+            System.out.println(word + " palindrom bir kelime değildir.");}
+    }
+}
