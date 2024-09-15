@@ -1,0 +1,22 @@
+public class Main {
+    public static void main(String[] args){
+        int[] array={10, 20, 20, 10, 10, 20, 5, 20};
+        int sayac=0;
+        boolean[] kontrol = new boolean[array.length];
+
+        for (int i=0; i< array.length; i++){
+            if(kontrol[i]){
+                continue;
+            }
+
+            for (int j=0; j< array.length; j++){
+               if(array[i]==array[j]) {
+                   sayac++;
+                   kontrol[j]= true;
+               }
+            }
+            System.out.println(array[i] + " sayisi "+ sayac + " kez tekrar edildi.");
+            sayac=0;
+        }
+    }
+}
